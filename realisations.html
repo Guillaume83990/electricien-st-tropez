@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Découvrez les réalisations de Voltaire Électricité : villas de prestige, domotique, éclairage architectural et bornes IRVE dans le Golfe de Saint-Tropez." />
+    <title>Réalisations — Voltaire Électricité Saint-Tropez</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/realisations.css" />
+</head>
+
+<body>
+
+    <!-- ============================================================
+       HEADER
+  ============================================================ -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo" aria-label="Voltaire Électricité – Accueil">
+                <span class="logo-mark">V</span>
+            </a>
+            <nav class="nav-main" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="realisations.html" class="active">Réalisations</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html" class="nav-cta">Demander un devis</a></li>
+                </ul>
+            </nav>
+            <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================================
+       HERO
+  ============================================================ -->
+    <section id="real-hero">
+        <div class="real-hero-inner">
+            <span class="section-label" data-anim="fade-up">Nos réalisations</span>
+            <h1 data-anim="fade-up" data-delay="1">
+                Chaque chantier,<br />une <em>signature</em>
+            </h1>
+            <p data-anim="fade-up" data-delay="2">
+                320 projets réalisés dans le Golfe. Une sélection de nos interventions<br />
+                les plus représentatives, du plus technique au plus raffiné.
+            </p>
+        </div>
+
+        <!-- Bande de photos défilante -->
+        <div class="real-hero-strip" aria-hidden="true">
+            <div class="strip-track">
+                <!-- Les images se répètent pour l'effet boucle infinie -->
+                <img src="image/image-chantier-saint-tropez.webp" alt="image chantier saint-tropez" />
+                <img src="image/image-chantier-sainte-maxime.webp" alt="image chantier ste-maxime" />
+                <img src="image/image-chantier-grimaud.webp" alt="image chantier grimaud" />
+                <img src="image/image-chantier-ramatuelle.webp" alt="image chantier ramatuelle" />
+                <img src="image/image-chantier-cogolin.webp" alt="image chantier cogolin" />
+                <img src="image/image-chantier-st-raphael.webp" alt="image chantier st raphael" />
+                <img src="image/image-chantier-frejus.webp" alt="image chantier frejus" />
+                <img src="image/image-chantier-la-foux.webp" alt="image chantier la foux" />
+                <img src="image/image-chantier-pampelonne.webp" alt="image chantier pampelonne" />
+                <img src="image/image-chantier-plage.webp" alt="image chantier plage" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FILTRES
+  ============================================================ -->
+    <div id="filtres" role="group" aria-label="Filtrer les réalisations">
+        <div class="filtres-inner">
+            <button class="filtre-btn active" data-filter="all">Tous</button>
+            <button class="filtre-btn" data-filter="installation">Installation</button>
+            <button class="filtre-btn" data-filter="domotique">Domotique</button>
+            <button class="filtre-btn" data-filter="eclairage">Éclairage</button>
+            <button class="filtre-btn" data-filter="borne">Borne IRVE</button>
+        </div>
+    </div>
+
+    <!-- ============================================================
+       GRILLE RÉALISATIONS
+  ============================================================ -->
+    <section id="grille" aria-label="Grille des réalisations">
+        <div class="grille-inner">
+
+            <!-- ---- Projet 1 : LARGE ---- -->
+            <article class="projet-card projet-large" data-cat="installation domotique" data-anim="fade-up">
+                <div class="projet-img-wrap">
+                    <!-- Grande villa, photo principale -->
+                    <img src="image/villa-ramatuelle.webp" alt="Villa Les Parcs de Ramatuelle — installation complète"
+                        loading="lazy" />
+                    <div class="projet-overlay">
+                        <div class="projet-overlay-inner">
+                            <span class="projet-cats">Installation · Domotique KNX</span>
+                            <h2 class="projet-titre">Villa Les Parcs<br /><em>de Ramatuelle</em></h2>
+                            <dl class="projet-meta">
+                                <div>
+                                    <dt>Surface</dt>
+                                    <dd>450 m²</dd>
+                                </div>
+                                <div>
+                                    <dt>Durée</dt>
+                                    <dd>6 semaines</dd>
+                                </div>
+                                <div>
+                                    <dt>Lieu</dt>
+                                    <dd>Ramatuelle</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <button class="projet-open" aria-label="Voir le détail Villa Les Parcs de Ramatuelle" data-id="1">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </article>
+
+            <!-- ---- Projet 2 ---- -->
+            <article class="projet-card" data-cat="eclairage" data-anim="fade-up" data-delay="1">
+                <div class="projet-img-wrap">
+                    <img src="image/domaine-viticole-eclairage.webp"
+                        alt="Éclairage architectural domaine viticole Gassin" loading="lazy" />
+                    <div class="projet-overlay">
+                        <div class="projet-overlay-inner">
+                            <span class="projet-cats">Éclairage architectural</span>
+                            <h2 class="projet-titre">Domaine de <em>Gassin</em></h2>
+                            <dl class="projet-meta">
+                                <div>
+                                    <dt>Prestation</dt>
+                                    <dd>Plan lumière complet</dd>
+                                </div>
+                                <div>
+                                    <dt>Lieu</dt>
+                                    <dd>Gassin</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <button class="projet-open" aria-label="Voir le détail Domaine de Gassin" data-id="2">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </article>
+
+            <!-- ---- Projet 3 ---- -->
+            <article class="projet-card" data-cat="borne" data-anim="fade-up" data-delay="2">
+                <div class="projet-img-wrap">
+                    <img src="image/borne-recharge.webp" alt="Borne IRVE résidence Sainte-Maxime" loading="lazy" />
+                    <div class="projet-overlay">
+                        <div class="projet-overlay-inner">
+                            <span class="projet-cats">Borne IRVE</span>
+                            <h2 class="projet-titre">Résidence <em>Sainte-Maxime</em></h2>
+                            <dl class="projet-meta">
+                                <div>
+                                    <dt>Bornes</dt>
+                                    <dd>4 × 22 kW Wallbox</dd>
+                                </div>
+                                <div>
+                                    <dt>Lieu</dt>
+                                    <dd>Sainte-Maxime</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <button class="projet-open" aria-label="Voir le détail Résidence Sainte-Maxime" data-id="3">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </article>
+
+            <!-- ---- Projet 4 ---- -->
+            <article class="projet-card" data-cat="domotique" data-anim="fade-up">
+                <div class="projet-img-wrap">
+                    <img src="image/mas-provençal-eclairage.webp" alt="Domotique KNX villa Grimaud" loading="lazy" />
+                    <div class="projet-overlay">
+                        <div class="projet-overlay-inner">
+                            <span class="projet-cats">Domotique KNX</span>
+                            <h2 class="projet-titre">Mas provençal <em>Grimaud</em></h2>
+                            <dl class="projet-meta">
+                                <div>
+                                    <dt>Protocole</dt>
+                                    <dd>KNX + Somfy</dd>
+                                </div>
+                                <div>
+                                    <dt>Lieu</dt>
+                                    <dd>Grimaud</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <button class="projet-open" aria-label="Voir le détail Mas de Grimaud" data-id="4">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </article>
+
+            <!-- ---- Projet 5 : LARGE ---- -->
+            <article class="projet-card projet-large" data-cat="installation eclairage" data-anim="fade-up"
+                data-delay="1">
+                <div class="projet-img-wrap">
+                    <img src="image/eclairage-piscine.webp" alt="Villa Pampelonne installation et éclairage piscine"
+                        loading="lazy" />
+                    <div class="projet-overlay">
+                        <div class="projet-overlay-inner">
+                            <span class="projet-cats">Installation · Éclairage piscine</span>
+                            <h2 class="projet-titre">Villa <em>Pampelonne</em></h2>
+                            <dl class="projet-meta">
+                                <div>
+                                    <dt>Surface</dt>
+                                    <dd>280 m²</dd>
+                                </div>
+                                <div>
+                                    <dt>Prestation</dt>
+                                    <dd>Rénovation complète + éclairage paysager</dd>
+                                </div>
+                                <div>
+                                    <dt>Lieu</dt>
+                                    <dd>Ramatuelle</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <button class="projet-open" aria-label="Voir le détail Villa Pampelonne" data-id="5">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </article>
+
+            <!-- ---- Projet 6 ---- -->
+            <article class="projet-card" data-cat="installation" data-anim="fade-up" data-delay="2">
+                <div class="projet-img-wrap">
+                    <img src="image/eclairage-villa-ramatuelle.webp" alt="Mise aux normes villa La Croix-Valmer"
+                        loading="lazy" />
+                    <div class="projet-overlay">
+                        <div class="projet-overlay-inner">
+                            <span class="projet-cats">Mise aux normes</span>
+                            <h2 class="projet-titre">Villa <em>La Croix-Valmer</em></h2>
+                            <dl class="projet-meta">
+                                <div>
+                                    <dt>Prestation</dt>
+                                    <dd>NF C 15-100 complète</dd>
+                                </div>
+                                <div>
+                                    <dt>Lieu</dt>
+                                    <dd>La Croix-Valmer</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <button class="projet-open" aria-label="Voir le détail Villa La Croix-Valmer" data-id="6">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       MODAL DÉTAIL PROJET
+  ============================================================ -->
+    <div id="modal" role="dialog" aria-modal="true" aria-label="Détail du projet" hidden>
+        <div class="modal-backdrop"></div>
+        <div class="modal-panel">
+            <button class="modal-close" aria-label="Fermer">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img class="modal-img-main" src="" alt="" />
+                    <div class="modal-thumbs">
+                        <!-- injectées par JS -->
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <span class="modal-cats section-label"></span>
+                    <h2 class="modal-titre"></h2>
+                    <p class="modal-desc"></p>
+                    <dl class="modal-meta">
+                        <!-- injectées par JS -->
+                    </dl>
+                    <a href="contact.html" class="btn-primary">Projet similaire ? Contactez-nous</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+       CTA BAND
+  ============================================================ -->
+    <section id="cta-band" aria-label="Appel à l'action">
+        <div class="cta-band-inner">
+            <div class="cta-band-content" data-anim="fade-up">
+                <h2>Un projet ? Une urgence ?<br /><em>Parlons-en.</em></h2>
+                <p>Devis gratuit sous 24h. Intervention rapide sur l'ensemble du Golfe de Saint-Tropez.</p>
+            </div>
+            <div class="cta-band-actions" data-anim="fade-up" data-delay="1">
+                <a href="contact.html" class="btn-primary">Demander un devis</a>
+                <a href="tel:+33600000000" class="btn-ghost">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path
+                            d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"
+                            stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                    06 00 00 00 00
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo" aria-label="Voltaire Électricité">
+                    <span class="logo-mark">V</span>
+                </a>
+                <p>Électricien certifié RGE<br />Saint-Tropez & Golfe de Saint-Tropez</p>
+            </div>
+            <nav class="footer-nav" aria-label="Navigation secondaire">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <address>
+                    <p>12 Rue des Potiers<br />83990 Saint-Tropez</p>
+                    <p><a href="tel:+33600000000">06 00 00 00 00</a></p>
+                    <p><a href="mailto:contact@voltaire-electricite.fr">contact@voltaire-electricite.fr</a></p>
+                </address>
+            </div>
+            <div class="footer-certifs">
+                <h3>Certifications</h3>
+                <ul>
+                    <li>Qualif. Qualifelec</li>
+                    <li>Certifié RGE</li>
+                    <li>Habilitation BR / BC</li>
+                    <li>Assurance décennale</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Voltaire Électricité — Tous droits réservés</p>
+            <p><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Politique
+                    de confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/realisations.js"></script>
+
+</body>
+
+</html>

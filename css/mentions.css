@@ -1,0 +1,271 @@
+/* ============================================================
+   MENTIONS.CSS — Styles spécifiques aux mentions légales
+============================================================ */
+
+/* --- HERO --------------------------------------------------- */
+#mentions-hero {
+    padding-top: 180px;
+    padding-bottom: 80px;
+    background: var(--noir);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#mentions-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center top, rgba(201, 169, 110, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.mentions-hero-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.mentions-hero-inner .section-label {
+    margin-bottom: 20px;
+}
+
+.mentions-hero-inner h1 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    margin-bottom: 16px;
+}
+
+.mentions-hero-inner>p {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+}
+
+/* --- CORPS -------------------------------------------------- */
+#mentions-body {
+    background: var(--noir);
+    padding: clamp(60px, 8vw, 100px) 0 var(--section-pad);
+}
+
+.mentions-inner {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    width: min(100%, var(--container));
+    margin-inline: auto;
+    padding-inline: clamp(20px, 5vw, 60px);
+    align-items: start;
+}
+
+/* --- NAV LATÉRALE STICKY ----------------------------------- */
+.mentions-nav {
+    position: sticky;
+    top: 100px;
+}
+
+.mentions-nav-title {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--gris);
+}
+
+.mentions-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mnav-link {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--ivoire-2);
+    padding: 8px 12px;
+    border-left: 2px solid transparent;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+
+.mnav-link:hover,
+.mnav-link.active {
+    color: var(--ivoire);
+    border-left-color: var(--or);
+    background: rgba(201, 169, 110, 0.04);
+}
+
+/* --- SECTIONS ARTICLES ------------------------------------- */
+.mentions-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.mention-section {
+    padding: clamp(40px, 5vw, 60px) 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+.mention-section:first-child {
+    padding-top: 0;
+}
+
+.mention-section:last-child {
+    border-bottom: none;
+}
+
+/* Titre avec numéro */
+.mention-section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    color: var(--ivoire);
+    margin-bottom: 28px;
+}
+
+.mention-num {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--or);
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* Corps texte */
+.mention-body p {
+    font-size: 0.92rem;
+    color: var(--ivoire-2);
+    line-height: 1.85;
+    max-width: 680px;
+}
+
+.mention-body p+p {
+    margin-top: 16px;
+}
+
+.mention-body a {
+    color: var(--or);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.25s;
+}
+
+.mention-body a:hover {
+    color: var(--or-clair);
+}
+
+/* Tableau DL */
+.mention-dl {
+    margin: 24px 0;
+    border-top: 1px solid var(--gris);
+}
+
+.mention-dl>div {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gris);
+    align-items: baseline;
+}
+
+.mention-dl dt {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--or);
+    flex-shrink: 0;
+}
+
+.mention-dl dd {
+    font-size: 0.9rem;
+    color: var(--ivoire-2);
+    line-height: 1.6;
+}
+
+.mention-dl dd a {
+    color: var(--or);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Liste */
+.mention-list {
+    margin: 16px 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mention-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--ivoire-2);
+}
+
+.mention-list li::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+    background: var(--or);
+    flex-shrink: 0;
+}
+
+/* Bouton retour */
+.mention-back {
+    margin-top: 32px;
+}
+
+/* --- Responsive -------------------------------------------- */
+@media (max-width: 900px) {
+    .mentions-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .mentions-nav {
+        position: static;
+        background: var(--noir-2);
+        border: 1px solid var(--gris);
+        padding: 24px;
+    }
+
+    .mentions-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .mnav-link {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .mnav-link:hover,
+    .mnav-link.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--or);
+    }
+}
+
+@media (max-width: 560px) {
+    .mention-dl>div {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .mention-section h2 {
+        gap: 12px;
+    }
+}

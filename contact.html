@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Contactez Voltaire Électricité à Saint-Tropez. Devis gratuit sous 24h, dépannage 24h/24. Électricien certifié RGE dans tout le Golfe de Saint-Tropez." />
+    <title>Contact — Voltaire Électricité Saint-Tropez</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+</head>
+
+<body>
+
+    <!-- ============================================================
+       HEADER
+  ============================================================ -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo" aria-label="Voltaire Électricité – Accueil">
+                <span class="logo-mark">V</span>
+            </a>
+            <nav class="nav-main" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html" class="nav-cta active">Demander un devis</a></li>
+                </ul>
+            </nav>
+            <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================================
+       HERO CONTACT
+  ============================================================ -->
+    <section id="contact-hero">
+        <div class="contact-hero-inner">
+            <span class="section-label" data-anim="fade-up">Contactez-nous</span>
+            <h1 data-anim="fade-up" data-delay="1">
+                Parlons de<br />votre <em>projet</em>
+            </h1>
+            <p data-anim="fade-up" data-delay="2">
+                Devis gratuit sous 24h · Urgence 7j/7 · Golfe de Saint-Tropez
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       CORPS — Formulaire + Infos
+  ============================================================ -->
+    <section id="contact-body">
+        <div class="contact-inner">
+
+            <!-- ---- FORMULAIRE ------------------------------------ -->
+            <div class="contact-form-wrap" data-anim="fade-right">
+
+                <div class="form-header">
+                    <h2>Demande de <em>devis</em></h2>
+                    <p>Remplissez ce formulaire, nous vous recontactons sous 24h.</p>
+                </div>
+
+                <form id="contact-form" action="#" method="POST" novalidate aria-label="Formulaire de contact">
+
+                    <!-- Ligne 1 : Prénom / Nom -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+                            <input type="text" id="prenom" name="prenom" autocomplete="given-name" placeholder="Jean"
+                                required />
+                            <span class="form-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">Nom <span aria-hidden="true">*</span></label>
+                            <input type="text" id="nom" name="nom" autocomplete="family-name" placeholder="Dupont"
+                                required />
+                            <span class="form-error" aria-live="polite"></span>
+                        </div>
+                    </div>
+
+                    <!-- Ligne 2 : Email / Téléphone -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email <span aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" autocomplete="email"
+                                placeholder="jean@exemple.fr" required />
+                            <span class="form-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">Téléphone</label>
+                            <input type="tel" id="tel" name="tel" autocomplete="tel" placeholder="06 00 00 00 00" />
+                        </div>
+                    </div>
+
+                    <!-- Commune -->
+                    <div class="form-group">
+                        <label for="commune">Commune <span aria-hidden="true">*</span></label>
+                        <div class="select-wrap">
+                            <select id="commune" name="commune" required>
+                                <option value="" disabled selected>Sélectionnez votre commune</option>
+                                <option value="saint-tropez">Saint-Tropez</option>
+                                <option value="ramatuelle">Ramatuelle</option>
+                                <option value="gassin">Gassin</option>
+                                <option value="grimaud">Grimaud</option>
+                                <option value="sainte-maxime">Sainte-Maxime</option>
+                                <option value="cogolin">Cogolin</option>
+                                <option value="la-croix-valmer">La Croix-Valmer</option>
+                                <option value="le-lavandou">Le Lavandou</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <svg class="select-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="form-error" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Type de prestation -->
+                    <div class="form-group">
+                        <label>Type de prestation</label>
+                        <div class="checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="prestation" value="installation" />
+                                <span>Installation électrique</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="prestation" value="domotique" />
+                                <span>Domotique & sécurité</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="prestation" value="depannage" />
+                                <span>Dépannage</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="prestation" value="eclairage" />
+                                <span>Éclairage architectural</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="prestation" value="borne" />
+                                <span>Borne IRVE</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="prestation" value="autre" />
+                                <span>Autre</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label for="message">Votre message <span aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Décrivez votre projet ou votre besoin…" required></textarea>
+                        <span class="form-error" aria-live="polite"></span>
+                    </div>
+
+                    <!-- RGPD -->
+                    <div class="form-group form-rgpd">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="rgpd" id="rgpd" required />
+                            <span>J'accepte que mes données soient utilisées pour traiter ma demande. <a href="#">En
+                                    savoir plus</a></span>
+                        </label>
+                        <span class="form-error" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit" class="btn-primary form-submit">
+                        <span class="btn-label">Envoyer ma demande</span>
+                        <span class="btn-loader" aria-hidden="true"></span>
+                    </button>
+
+                </form>
+
+                <!-- Message de succès -->
+                <div id="form-success" hidden aria-live="polite">
+                    <div class="success-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M15 24l7 7 11-11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Message envoyé !</h3>
+                    <p>Nous vous recontactons sous 24h. En cas d'urgence, appelez directement le <a
+                            href="tel:+33600000000">06 00 00 00 00</a>.</p>
+                </div>
+
+            </div>
+
+            <!-- ---- INFOS PRATIQUES ------------------------------- -->
+            <div class="contact-info" data-anim="fade-left">
+
+                <!-- Urgence -->
+                <div class="info-urgence">
+                    <div class="info-urgence-label">
+                        <span class="urgence-dot" aria-hidden="true"></span>
+                        Dépannage disponible 24h/24 · 7j/7
+                    </div>
+                    <a href="tel:+33600000000" class="info-tel">06 00 00 00 00</a>
+                </div>
+
+                <!-- Coordonnées -->
+                <div class="info-block">
+                    <h3>Adresse</h3>
+                    <address>
+                        <p>12 Rue des Potiers<br />83990 Saint-Tropez</p>
+                    </address>
+                </div>
+
+                <div class="info-block">
+                    <h3>Email</h3>
+                    <a href="mailto:contact@voltaire-electricite.fr">
+                        contact@voltaire-electricite.fr
+                    </a>
+                </div>
+
+                <div class="info-block">
+                    <h3>Horaires</h3>
+                    <dl class="horaires">
+                        <div>
+                            <dt>Lun – Ven</dt>
+                            <dd>07h30 – 18h30</dd>
+                        </div>
+                        <div>
+                            <dt>Samedi</dt>
+                            <dd>08h00 – 13h00</dd>
+                        </div>
+                        <div>
+                            <dt>Urgences</dt>
+                            <dd>24h/24 · 7j/7</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="info-block">
+                    <h3>Zone d'intervention</h3>
+                    <ul class="zone-pills">
+                        <li>Saint-Tropez</li>
+                        <li>Ramatuelle</li>
+                        <li>Gassin</li>
+                        <li>Grimaud</li>
+                        <li>Sainte-Maxime</li>
+                        <li>Cogolin</li>
+                        <li>La Croix-Valmer</li>
+                        <li>Le Lavandou</li>
+                    </ul>
+                </div>
+
+                <!-- Certifications condensées -->
+                <div class="info-certifs">
+                    <span>Certifié RGE</span>
+                    <span>Qualifelec</span>
+                    <span>IRVE</span>
+                    <span>Décennale</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo" aria-label="Voltaire Électricité">
+                    <span class="logo-mark">V</span>
+                </a>
+                <p>Électricien certifié RGE<br />Saint-Tropez & Golfe de Saint-Tropez</p>
+            </div>
+            <nav class="footer-nav" aria-label="Navigation secondaire">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <address>
+                    <p>12 Rue des Potiers<br />83990 Saint-Tropez</p>
+                    <p><a href="tel:+33600000000">06 00 00 00 00</a></p>
+                    <p><a href="mailto:contact@voltaire-electricite.fr">contact@voltaire-electricite.fr</a></p>
+                </address>
+            </div>
+            <div class="footer-certifs">
+                <h3>Certifications</h3>
+                <ul>
+                    <li>Qualif. Qualifelec</li>
+                    <li>Certifié RGE</li>
+                    <li>Habilitation BR / BC</li>
+                    <li>Assurance décennale</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Voltaire Électricité — Tous droits réservés</p>
+            <p><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Politique
+                    de confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/contact.js"></script>
+
+</body>
+
+</html>

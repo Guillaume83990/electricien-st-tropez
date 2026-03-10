@@ -1,0 +1,617 @@
+/* ============================================================
+   STYLE.CSS — Styles globaux Voltaire Électricité
+============================================================ */
+
+/* --- Variables ----------------------------------------------- */
+:root {
+    /* Couleurs */
+    --noir: #0A0A0A;
+    --noir-2: #141414;
+    --noir-3: #1E1E1E;
+    --gris: #2A2A2A;
+    --gris-clair: #555555;
+    --ivoire: #F0EAD6;
+    --ivoire-2: #C8BFA8;
+    --or: #C9A96E;
+    --or-clair: #E2C99A;
+    --or-sombre: #A0804A;
+    --blanc: #FFFFFF;
+
+    /* Typo */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'DM Sans', sans-serif;
+
+    /* Espacements */
+    --section-pad: clamp(80px, 10vw, 140px);
+    --container: 1240px;
+    --gap: clamp(24px, 3vw, 48px);
+
+    /* Transitions */
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --dur: 0.45s;
+}
+
+/* --- Reset & Base -------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--noir);
+    color: var(--ivoire);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.65;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+address {
+    font-style: normal;
+}
+
+/* --- Conteneur ----------------------------------------------- */
+.container {
+    width: min(100%, var(--container));
+    margin-inline: auto;
+    padding-inline: clamp(20px, 5vw, 60px);
+}
+
+/* --- Titres -------------------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+}
+
+h1 {
+    font-size: clamp(3rem, 6vw, 6rem);
+}
+
+h2 {
+    font-size: clamp(2.2rem, 4vw, 4rem);
+}
+
+h3 {
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+}
+
+em {
+    font-style: italic;
+    color: var(--or);
+}
+
+/* --- Labels de section --------------------------------------- */
+.section-label {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 1.2rem;
+}
+
+.section-header {
+    margin-bottom: clamp(40px, 5vw, 72px);
+}
+
+/* --- Boutons ------------------------------------------------- */
+.btn-primary,
+.btn-ghost,
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    transition: background var(--dur) var(--ease),
+        color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease),
+        transform 0.2s ease;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--or);
+    color: var(--noir);
+    border-color: var(--or);
+}
+
+.btn-primary:hover {
+    background: var(--or-clair);
+    border-color: var(--or-clair);
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--ivoire);
+    border-color: rgba(240, 234, 214, 0.35);
+}
+
+.btn-ghost:hover {
+    border-color: var(--ivoire);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--or);
+    border-color: var(--or);
+}
+
+.btn-outline:hover {
+    background: var(--or);
+    color: var(--noir);
+    transform: translateY(-2px);
+}
+
+.btn-ghost svg,
+.btn-outline svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* --- Header / Nav -------------------------------------------- */
+#header {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline: 0;
+    z-index: 100;
+    transition: background var(--dur) var(--ease),
+        box-shadow var(--dur) var(--ease);
+}
+
+#header.scrolled {
+    background: rgba(10, 10, 10, 0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(201, 169, 110, 0.15);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(100%, var(--container));
+    margin-inline: auto;
+    padding: 22px clamp(20px, 5vw, 60px);
+    gap: 24px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo-mark {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--or);
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--or);
+    letter-spacing: 0;
+    /* Remplace par ton <img src="./images/logo.svg"> quand prêt */
+}
+
+.logo-text {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--ivoire);
+}
+
+.logo-text em {
+    color: var(--or);
+    font-style: italic;
+}
+
+/* Navigation */
+.nav-main ul {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 40px);
+}
+
+.nav-main a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ivoire-2);
+    transition: color var(--dur) var(--ease);
+    position: relative;
+}
+
+.nav-main a::after {
+    content: '';
+    position: absolute;
+    inset-block-end: -4px;
+    inset-inline-start: 0;
+    width: 0;
+    height: 1px;
+    background: var(--or);
+    transition: width var(--dur) var(--ease);
+}
+
+.nav-main a:hover,
+.nav-main a.active {
+    color: var(--ivoire);
+}
+
+.nav-main a:hover::after,
+.nav-main a.active::after {
+    width: 100%;
+}
+
+.nav-main .nav-cta {
+    padding: 9px 22px;
+    border: 1px solid var(--or);
+    color: var(--or);
+    letter-spacing: 0.12em;
+    transition: background var(--dur) var(--ease),
+        color var(--dur) var(--ease);
+}
+
+.nav-main .nav-cta::after {
+    display: none;
+}
+
+.nav-main .nav-cta:hover {
+    background: var(--or);
+    color: var(--noir);
+}
+
+/* Burger */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 101;
+    /* au-dessus du menu ouvert */
+    position: relative;
+}
+
+.burger span {
+    display: block;
+    width: 26px;
+    height: 1.5px;
+    background: var(--ivoire);
+    transition: transform var(--dur) var(--ease),
+        opacity 0.2s,
+        background 0.25s;
+}
+
+/* Spans noirs quand le menu fond clair est ouvert */
+.burger.open span {
+    background: var(--noir);
+}
+
+/* --- Footer -------------------------------------------------- */
+#footer {
+    background: var(--noir-2);
+    border-top: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--gap);
+    width: min(100%, var(--container));
+    margin-inline: auto;
+    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
+}
+
+.footer-brand .logo {
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    font-size: 0.82rem;
+    color: var(--gris-clair);
+    line-height: 1.7;
+}
+
+.footer-nav h3,
+.footer-contact h3,
+.footer-certifs h3 {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 20px;
+}
+
+.footer-nav ul li+li {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    font-size: 0.88rem;
+    color: var(--ivoire-2);
+    transition: color 0.25s;
+}
+
+.footer-nav a:hover {
+    color: var(--ivoire);
+}
+
+.footer-contact address p {
+    font-size: 0.88rem;
+    color: var(--ivoire-2);
+    line-height: 1.8;
+}
+
+.footer-contact a {
+    transition: color 0.25s;
+}
+
+.footer-contact a:hover {
+    color: var(--or);
+}
+
+.footer-certifs ul li {
+    font-size: 0.82rem;
+    color: var(--ivoire-2);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+.footer-certifs ul li:first-child {
+    border-top: 1px solid var(--gris);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: min(100%, var(--container));
+    margin-inline: auto;
+    padding: 24px clamp(20px, 5vw, 60px);
+    border-top: 1px solid var(--gris);
+    font-size: 0.75rem;
+    color: var(--gris-clair);
+}
+
+.footer-bottom a {
+    transition: color 0.25s;
+}
+
+.footer-bottom a:hover {
+    color: var(--or);
+}
+
+/* --- Animation d'entrée (classes gérées par main.js) --------- */
+[data-anim] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+[data-anim="fade-right"] {
+    transform: translateX(-36px);
+}
+
+[data-anim="fade-left"] {
+    transform: translateX(36px);
+}
+
+[data-anim].visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+[data-delay="1"] {
+    transition-delay: 0.1s;
+}
+
+[data-delay="2"] {
+    transition-delay: 0.2s;
+}
+
+[data-delay="3"] {
+    transition-delay: 0.3s;
+}
+
+/* --- CTA Band (global, toutes pages) ------------------------- */
+#cta-band {
+    background: var(--noir-2);
+    border-top: 1px solid rgba(201, 169, 110, 0.15);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+    padding: clamp(64px, 9vw, 120px) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201, 169, 110, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cta-band-inner {
+    width: min(100%, var(--container));
+    margin-inline: auto;
+    padding-inline: clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: clamp(32px, 5vw, 60px);
+}
+
+.cta-band-content h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.cta-band-content p {
+    font-size: 0.95rem;
+    color: var(--ivoire-2);
+    max-width: 480px;
+}
+
+.cta-band-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-shrink: 0;
+    align-items: stretch;
+}
+
+.cta-band-actions .btn-primary,
+.cta-band-actions .btn-ghost {
+    justify-content: center;
+    white-space: nowrap;
+}
+
+/* --- Responsive ---------------------------------------------- */
+@media (max-width: 1024px) {
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-main {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-main.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+        background: var(--ivoire);
+        padding: 100px 40px 40px;
+        z-index: 99;
+        overflow-y: auto;
+    }
+
+    .nav-main.open ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-main.open ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+    }
+
+    .nav-main.open a {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        color: var(--noir) !important;
+        padding: 20px 0;
+    }
+
+    .nav-main.open a::after {
+        display: none;
+    }
+
+    .nav-main.open a:hover {
+        color: var(--or-sombre) !important;
+    }
+
+    .nav-main.open .nav-cta {
+        margin-top: 32px;
+        display: inline-block;
+        width: auto;
+        border: 1px solid var(--noir);
+        color: var(--noir) !important;
+        padding: 14px 28px;
+    }
+
+    .nav-main.open .nav-cta:hover {
+        background: var(--noir);
+        color: var(--ivoire) !important;
+    }
+
+    /* CTA band responsive */
+    .cta-band-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .cta-band-content p {
+        max-width: 100%;
+    }
+
+    .cta-band-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

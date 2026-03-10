@@ -1,0 +1,140 @@
+/* ============================================================
+   POLITIQUE.CSS — Styles spécifiques à la politique de confidentialité
+   (complète mentions.css qui est déjà chargé)
+============================================================ */
+
+/* --- Intro -------------------------------------------------- */
+.politique-intro {
+    padding: clamp(28px, 3vw, 40px);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    background: rgba(201, 169, 110, 0.03);
+    margin-bottom: 8px;
+}
+
+.politique-intro p {
+    font-size: 0.95rem;
+    color: var(--ivoire-2);
+    line-height: 1.85;
+    max-width: 100%;
+}
+
+/* --- Tableau ------------------------------------------------ */
+.politique-table-wrap {
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid var(--gris);
+}
+
+.politique-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.politique-table thead tr {
+    background: var(--noir-3);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.politique-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--or);
+    white-space: nowrap;
+}
+
+.politique-table td {
+    padding: 14px 20px;
+    color: var(--ivoire-2);
+    border-bottom: 1px solid var(--gris);
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.politique-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.politique-table tbody tr:hover td {
+    background: rgba(201, 169, 110, 0.03);
+}
+
+/* Tags obligatoire / facultatif */
+.tag-obligatoire,
+.tag-facultatif {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border: 1px solid;
+}
+
+.tag-obligatoire {
+    color: var(--or);
+    border-color: rgba(201, 169, 110, 0.4);
+}
+
+.tag-facultatif {
+    color: var(--ivoire-2);
+    border-color: var(--gris);
+}
+
+/* --- Grille droits ----------------------------------------- */
+.droits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 28px 0;
+}
+
+.droit-card {
+    padding: 22px;
+    border: 1px solid var(--gris);
+    background: var(--noir-2);
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.droit-card:hover {
+    border-color: rgba(201, 169, 110, 0.35);
+    transform: translateY(-3px);
+}
+
+.droit-card h3 {
+    font-size: 0.9rem;
+    color: var(--or);
+    margin-bottom: 8px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.droit-card p {
+    font-size: 0.82rem;
+    color: var(--ivoire-2);
+    line-height: 1.65;
+    max-width: 100%;
+}
+
+/* --- Responsive -------------------------------------------- */
+@media (max-width: 900px) {
+    .droits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .droits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .politique-table th,
+    .politique-table td {
+        padding: 10px 12px;
+    }
+}

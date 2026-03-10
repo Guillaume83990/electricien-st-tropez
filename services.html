@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Découvrez tous les services de Voltaire Électricité : installation électrique, domotique, dépannage 24h/24, borne de recharge et éclairage architectural à Saint-Tropez." />
+    <title>Services — Voltaire Électricité Saint-Tropez</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/services.css" />
+</head>
+
+<body>
+
+    <!-- ============================================================
+       HEADER / NAV
+  ============================================================ -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo" aria-label="Voltaire Électricité – Accueil">
+                <span class="logo-mark">V</span>
+            </a>
+            <nav class="nav-main" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html" class="nav-cta">Demander un devis</a></li>
+                </ul>
+            </nav>
+            <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================================
+       PAGE HERO (sobre, typographique)
+  ============================================================ -->
+    <section id="services-hero">
+        <div class="services-hero-inner">
+            <div class="services-hero-content">
+                <span class="section-label" data-anim="fade-up">Nos prestations</span>
+                <h1 data-anim="fade-up" data-delay="1">
+                    Un service<br /><em>d'exception</em><br />pour chaque besoin
+                </h1>
+                <p data-anim="fade-up" data-delay="2">
+                    De l'installation complète d'une villa neuve au dépannage d'urgence,<br />
+                    chaque intervention est menée avec le même niveau d'exigence.
+                </p>
+            </div>
+            <div class="services-hero-visual" data-anim="fade-left" data-delay="1">
+                <!-- Photo d'ambiance : technicien au travail, tableau premium, etc. -->
+                <img src="image/electricien-villa.webp" alt="Électricien au travail villa Saint-Tropez"
+                    loading="eager" />
+                <div class="services-hero-tag">
+                    <span>Certifié</span>
+                    <strong>RGE · Qualifelec</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       NAVIGATION ANCRES (sticky sous le hero)
+  ============================================================ -->
+    <nav id="services-nav" aria-label="Filtrer par service">
+        <div class="services-nav-inner">
+            <a href="#installation" class="snav-link active">Installation</a>
+            <a href="#domotique" class="snav-link">Domotique</a>
+            <a href="#depannage" class="snav-link">Dépannage</a>
+            <a href="#eclairage" class="snav-link">Éclairage</a>
+            <a href="#borne" class="snav-link">Borne IRVE</a>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+       SERVICE 1 — INSTALLATION ÉLECTRIQUE
+  ============================================================ -->
+    <section class="service-section" id="installation" aria-labelledby="s1-title">
+        <div class="ss-inner ss-img-left">
+
+            <div class="ss-visual" data-anim="fade-right">
+                <!-- Photo : tableau électrique neuf, câblage soigné -->
+                <img src="image/tableau-electricite-villa.webp" alt="Tableau électrique installation villa"
+                    loading="lazy" />
+                <div class="ss-number" aria-hidden="true">01</div>
+            </div>
+
+            <div class="ss-content" data-anim="fade-left">
+                <span class="section-label">Installation électrique</span>
+                <h2 id="s1-title">La base, <em>irréprochable</em></h2>
+                <p>
+                    Chaque projet commence par une étude technique rigoureuse de vos besoins.
+                    Tableaux de distribution, circuits dédiés, câblages encastrés, prises et
+                    interrupteurs haut de gamme — tout est réalisé dans le respect strict des
+                    normes NF C 15-100 et des exigences esthétiques de votre propriété.
+                </p>
+                <ul class="ss-list">
+                    <li>Mise aux normes NF C 15-100</li>
+                    <li>Tableaux de distribution Hager / Legrand Grand Luxe</li>
+                    <li>Câblage neuf ou rénovation complète</li>
+                    <li>Appareillage haut de gamme (Legrand Céliane, Bticino Axolute…)</li>
+                    <li>Bilan de puissance et étude technique offerts</li>
+                </ul>
+                <a href="contact.html" class="btn-primary">Demander un devis</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SERVICE 2 — DOMOTIQUE & SÉCURITÉ
+  ============================================================ -->
+    <section class="service-section service-section--alt" id="domotique" aria-labelledby="s2-title">
+        <div class="ss-inner ss-img-right">
+
+            <div class="ss-content" data-anim="fade-right">
+                <span class="section-label">Domotique & sécurité</span>
+                <h2 id="s2-title">Votre demeure,<br /><em>intelligente</em></h2>
+                <p>
+                    Pilotez l'intégralité de votre propriété depuis un seul écran ou votre
+                    smartphone. Éclairage scénarisé, volets motorisés, climatisation, alarme
+                    intrusion, contrôle d'accès et vidéosurveillance — intégrés dans une
+                    interface unique, élégante et intuitive.
+                </p>
+                <ul class="ss-list">
+                    <li>Protocoles KNX, Somfy, Home Assistant</li>
+                    <li>Scénarios d'ambiance personnalisés</li>
+                    <li>Alarme intrusion certifiée grade 2 & 3</li>
+                    <li>Vidéosurveillance IP haute résolution</li>
+                    <li>Contrôle d'accès biométrique / badge</li>
+                    <li>Mise en service et formation incluses</li>
+                </ul>
+                <a href="contact.html" class="btn-primary">Demander un devis</a>
+            </div>
+
+            <div class="ss-visual" data-anim="fade-left">
+                <!-- Photo : interface domotique tactile, ambiance villa -->
+                <img src="image/interface-domotique.webp" alt="Interface domotique villa de prestige" loading="lazy" />
+                <div class="ss-number" aria-hidden="true">02</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SERVICE 3 — DÉPANNAGE 24H
+  ============================================================ -->
+    <section class="service-section" id="depannage" aria-labelledby="s3-title">
+        <div class="ss-inner ss-img-left">
+
+            <div class="ss-visual" data-anim="fade-right">
+                <!-- Photo : technicien en intervention, disjoncteur, urgence -->
+                <img src="image/depannage-electricien.webp" alt="Dépannage électrique d'urgence" loading="lazy" />
+                <div class="ss-number" aria-hidden="true">03</div>
+            </div>
+
+            <div class="ss-content" data-anim="fade-left">
+                <span class="section-label">Dépannage 24h/24</span>
+                <h2 id="s3-title">Jamais dans<br /><em>le noir</em></h2>
+                <p>
+                    Une panne électrique ne prévient pas, surtout en pleine saison estivale.
+                    Notre équipe intervient en moins de deux heures sur l'ensemble du Golfe,
+                    7 jours sur 7, y compris jours fériés. Diagnostic immédiat, réparation
+                    durable — sans compromis sur la qualité.
+                </p>
+                <div class="ss-urgence">
+                    <div class="ss-urgence-badge">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path
+                                d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"
+                                stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                        <div>
+                            <strong>Urgence 24h/24</strong>
+                            <span>06 00 00 00 00</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="ss-list">
+                    <li>Intervention en moins de 2h sur le Golfe</li>
+                    <li>Panne générale, disjoncteur, court-circuit</li>
+                    <li>Diagnostic complet inclus</li>
+                    <li>Devis sur place avant intervention</li>
+                    <li>Disponible samedis, dimanches, jours fériés</li>
+                </ul>
+                <a href="tel:+33600000000" class="btn-primary">Appeler maintenant</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SERVICE 4 — ÉCLAIRAGE ARCHITECTURAL
+  ============================================================ -->
+    <section class="service-section service-section--alt" id="eclairage" aria-labelledby="s4-title">
+        <div class="ss-inner ss-img-right">
+
+            <div class="ss-content" data-anim="fade-right">
+                <span class="section-label">Éclairage architectural</span>
+                <h2 id="s4-title">La lumière<br /><em>comme matière</em></h2>
+                <p>
+                    L'éclairage d'une propriété de prestige ne se résume pas à de simples
+                    ampoules. Nous concevons avec vous un plan lumière complet : mise en valeur
+                    architecturale, éclairage paysager, éclairage piscine sous-marin,
+                    ambiances intérieures sur variateur. Chaque détail est pensé pour sublimer
+                    votre cadre de vie.
+                </p>
+                <ul class="ss-list">
+                    <li>Plan lumière sur mesure</li>
+                    <li>Spots encastrés, rails, suspensions design</li>
+                    <li>Éclairage paysager basse consommation</li>
+                    <li>Éclairage piscine et terrasse</li>
+                    <li>Variateurs et scénarios d'ambiance</li>
+                    <li>Technologie LED dernière génération</li>
+                </ul>
+                <a href="contact.html" class="btn-primary">Demander un devis</a>
+            </div>
+
+            <div class="ss-visual" data-anim="fade-left">
+                <!-- Photo : éclairage extérieur villa, piscine, ambiance nocturne -->
+                <img src="image/electricite-villas.webp" alt="Éclairage architectural villa piscine" loading="lazy" />
+                <div class="ss-number" aria-hidden="true">04</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SERVICE 5 — BORNE IRVE / RECHARGE VE
+  ============================================================ -->
+    <section class="service-section" id="borne" aria-labelledby="s5-title">
+        <div class="ss-inner ss-img-left">
+
+            <div class="ss-visual" data-anim="fade-right">
+                <!-- Photo : borne de recharge Tesla / Wallbox installée dans garage villa -->
+                <img src="image/borne-recharge.webp" alt="Borne de recharge véhicule électrique villa" loading="lazy" />
+                <div class="ss-number" aria-hidden="true">05</div>
+            </div>
+
+            <div class="ss-content" data-anim="fade-left">
+                <span class="section-label">Borne IRVE</span>
+                <h2 id="s5-title">Recharge<br /><em>à domicile</em></h2>
+                <p>
+                    Électricien certifié IRVE (Infrastructure de Recharge pour Véhicules
+                    Électriques), nous installons votre borne de recharge dans les règles de
+                    l'art. Compatible Tesla, Porsche Taycan, Range Rover, et tous modèles
+                    récents. Éligible aux aides MaPrimeRénov' et Advenir.
+                </p>
+                <ul class="ss-list">
+                    <li>Étude de faisabilité et bilan de puissance</li>
+                    <li>Bornes 7 kW à 22 kW selon usage</li>
+                    <li>Marques : Wallbox, Hager, Schneider, Tesla Wall Connector</li>
+                    <li>Certification IRVE obligatoire — incluse</li>
+                    <li>Éligible aux aides Advenir &amp; MaPrimeRénov'</li>
+                    <li>Gestion de charge intelligente disponible</li>
+                </ul>
+                <a href="contact.html" class="btn-primary">Demander un devis</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       BLOC GARANTIES
+  ============================================================ -->
+    <section id="garanties" aria-labelledby="garanties-title">
+        <div class="container">
+            <div class="section-header" data-anim="fade-up">
+                <span class="section-label">Nos engagements</span>
+                <h2 id="garanties-title">Ce que vous pouvez<br /><em>exiger de nous</em></h2>
+            </div>
+            <div class="garanties-grid">
+                <div class="garantie-card" data-anim="fade-up" data-delay="0">
+                    <div class="garantie-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M24 6L8 14v14c0 9 7 16 16 18 9-2 16-9 16-18V14L24 6z" stroke="currentColor"
+                                stroke-width="1.5" stroke-linejoin="round" />
+                            <path d="M17 24l5 5 9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Garantie décennale</h3>
+                    <p>Toutes nos installations sont couvertes par une assurance décennale. Votre investissement est
+                        protégé sur le long terme.</p>
+                </div>
+                <div class="garantie-card" data-anim="fade-up" data-delay="1">
+                    <div class="garantie-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="17" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M24 14v10l7 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Intervention rapide</h3>
+                    <p>Devis sous 24h. En urgence, nous nous déplaçons en moins de 2 heures sur l'ensemble du Golfe de
+                        Saint-Tropez.</p>
+                </div>
+                <div class="garantie-card" data-anim="fade-up" data-delay="2">
+                    <div class="garantie-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M14 24h20M24 14v20" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <circle cx="24" cy="24" r="17" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <h3>Devis transparent</h3>
+                    <p>Tarification claire, sans surprise. Le devis est détaillé poste par poste avant tout démarrage de
+                        chantier.</p>
+                </div>
+                <div class="garantie-card" data-anim="fade-up" data-delay="3">
+                    <div class="garantie-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M12 36c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" />
+                            <circle cx="24" cy="18" r="6" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <h3>Interlocuteur unique</h3>
+                    <p>Un seul référent technique suit votre chantier du début à la fin. Joignable directement, sans
+                        secrétariat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       BANDE CTA
+  ============================================================ -->
+    <section id="cta-band" aria-label="Appel à l'action">
+        <div class="cta-band-inner">
+            <div class="cta-band-content" data-anim="fade-up">
+                <h2>Un projet ? Une urgence ?<br /><em>Parlons-en.</em></h2>
+                <p>Devis gratuit sous 24h. Intervention rapide sur l'ensemble du Golfe de Saint-Tropez.</p>
+            </div>
+            <div class="cta-band-actions" data-anim="fade-up" data-delay="1">
+                <a href="contact.html" class="btn-primary">Demander un devis</a>
+                <a href="tel:+33600000000" class="btn-ghost">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path
+                            d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"
+                            stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                    06 00 00 00 00
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo" aria-label="Voltaire Électricité">
+                    <span class="logo-mark">V</span>
+                </a>
+                <p>Électricien certifié RGE<br />Saint-Tropez & Golfe de Saint-Tropez</p>
+            </div>
+            <nav class="footer-nav" aria-label="Navigation secondaire">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <address>
+                    <p>12 Rue des Potiers<br />83990 Saint-Tropez</p>
+                    <p><a href="tel:+33600000000">06 00 00 00 00</a></p>
+                    <p><a href="mailto:contact@voltaire-electricite.fr">contact@voltaire-electricite.fr</a></p>
+                </address>
+            </div>
+            <div class="footer-certifs">
+                <h3>Certifications</h3>
+                <ul>
+                    <li>Qualif. Qualifelec</li>
+                    <li>Certifié RGE</li>
+                    <li>Habilitation BR / BC</li>
+                    <li>Assurance décennale</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Voltaire Électricité — Tous droits réservés</p>
+            <p><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Politique
+                    de confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/services.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,495 @@
+/* ============================================================
+   CONTACT.CSS
+============================================================ */
+
+/* --- HERO --------------------------------------------------- */
+#contact-hero {
+    padding-top: 180px;
+    padding-bottom: 80px;
+    background: var(--noir);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#contact-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center top, rgba(201, 169, 110, 0.06) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.contact-hero-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-hero-inner .section-label {
+    margin-bottom: 20px;
+}
+
+.contact-hero-inner h1 {
+    font-size: clamp(3.2rem, 6.5vw, 7rem);
+    margin-bottom: 20px;
+}
+
+.contact-hero-inner p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ivoire-2);
+}
+
+/* --- CORPS -------------------------------------------------- */
+#contact-body {
+    background: var(--noir);
+    padding-bottom: var(--section-pad);
+}
+
+.contact-inner {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: clamp(40px, 6vw, 80px);
+    width: min(100%, var(--container));
+    margin-inline: auto;
+    padding-inline: clamp(20px, 5vw, 60px);
+    align-items: start;
+}
+
+/* --- FORMULAIRE -------------------------------------------- */
+.contact-form-wrap {
+    background: var(--noir-2);
+    border: 1px solid var(--gris);
+    padding: clamp(32px, 5vw, 60px);
+}
+
+.form-header {
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--gris);
+}
+
+.form-header h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    font-size: 0.88rem;
+    color: var(--ivoire-2);
+}
+
+/* Groupes */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ivoire-2);
+}
+
+.form-group label span {
+    color: var(--or);
+}
+
+/* Inputs */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    background: var(--noir);
+    border: 1px solid var(--gris);
+    color: var(--ivoire);
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    padding: 14px 18px;
+    outline: none;
+    transition: border-color var(--dur) var(--ease);
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--gris-clair);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--or);
+}
+
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+    border-color: #c0392b;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.6;
+}
+
+/* Select custom */
+.select-wrap {
+    position: relative;
+}
+
+.select-wrap select {
+    padding-right: 44px;
+    cursor: pointer;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--or);
+    pointer-events: none;
+}
+
+/* Checkboxes */
+.checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    color: var(--ivoire-2);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    transition: color 0.25s;
+}
+
+.checkbox-label:hover {
+    color: var(--ivoire);
+}
+
+.checkbox-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border: 1px solid var(--gris-clair);
+    background: var(--noir);
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.25s, background 0.25s;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+    background: var(--or);
+    border-color: var(--or);
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 8px;
+    height: 5px;
+    border-left: 1.5px solid var(--noir);
+    border-bottom: 1.5px solid var(--noir);
+    transform: rotate(-45deg);
+}
+
+/* RGPD */
+.form-rgpd .checkbox-label {
+    align-items: flex-start;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.form-rgpd a {
+    color: var(--or);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Erreurs */
+.form-error {
+    font-size: 0.75rem;
+    color: #e74c3c;
+    min-height: 16px;
+    display: block;
+}
+
+/* Bouton submit */
+.form-submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-loader {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(10, 10, 10, 0.3);
+    border-top-color: var(--noir);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+.form-submit.loading .btn-label {
+    opacity: 0;
+}
+
+.form-submit.loading .btn-loader {
+    display: block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Message succès */
+#form-success {
+    text-align: center;
+    padding: clamp(40px, 6vw, 72px) 20px;
+}
+
+#form-success[hidden] {
+    display: none;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--or);
+    margin: 0 auto 24px;
+}
+
+#form-success h3 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--ivoire);
+    margin-bottom: 16px;
+}
+
+#form-success p {
+    font-size: 0.92rem;
+    color: var(--ivoire-2);
+    line-height: 1.7;
+}
+
+#form-success a {
+    color: var(--or);
+}
+
+/* --- INFOS PRATIQUES --------------------------------------- */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: sticky;
+    top: 100px;
+}
+
+/* Urgence */
+.info-urgence {
+    background: var(--noir-2);
+    border: 1px solid rgba(201, 169, 110, 0.25);
+    padding: 28px;
+    margin-bottom: 8px;
+}
+
+.info-urgence-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 12px;
+}
+
+.urgence-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--or);
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.2);
+    animation: pulse-dot 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 0 7px rgba(201, 169, 110, 0.05);
+    }
+}
+
+.info-tel {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-weight: 300;
+    color: var(--ivoire);
+    letter-spacing: 0.05em;
+    transition: color 0.25s;
+}
+
+.info-tel:hover {
+    color: var(--or);
+}
+
+/* Blocs infos */
+.info-block {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+.info-block:first-of-type {
+    border-top: 1px solid var(--gris);
+    margin-top: 20px;
+}
+
+.info-block h3 {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 10px;
+}
+
+.info-block address p,
+.info-block>a {
+    font-size: 0.9rem;
+    color: var(--ivoire-2);
+    line-height: 1.7;
+    font-style: normal;
+    transition: color 0.25s;
+}
+
+.info-block>a:hover {
+    color: var(--or);
+}
+
+/* Horaires */
+.horaires {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.horaires>div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.horaires dt {
+    font-size: 0.85rem;
+    color: var(--ivoire-2);
+}
+
+.horaires dd {
+    font-size: 0.85rem;
+    color: var(--ivoire);
+}
+
+/* Zone pills */
+.zone-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.zone-pills li {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ivoire-2);
+    border: 1px solid var(--gris);
+    padding: 5px 10px;
+}
+
+/* Certifs inline */
+.info-certifs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.info-certifs span {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--or);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    padding: 5px 12px;
+}
+
+/* --- Responsive -------------------------------------------- */
+@media (max-width: 900px) {
+    .contact-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        position: static;
+        order: -1;
+    }
+
+    .info-urgence {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .checkboxes {
+        grid-template-columns: 1fr;
+    }
+}
