@@ -4,66 +4,348 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO -->
     <meta name="description"
         content="Électricien expert à Saint-Tropez et dans le Golfe. Installations, dépannages et rénovations électriques haut de gamme pour villas et propriétés de prestige." />
-
     <title>Voltaire Électricité — Électricien Saint-Tropez</title>
-
-    <!-- PRELOAD LCP IMAGE (CRUCIAL) -->
-    <link rel="preload" as="image" href="image/tableau-electricite.webp">
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
 
-    <!-- CSS NON BLOQUANT -->
-    <link rel="stylesheet" href="./css/fonts.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="./css/style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="./css/index.css" media="print" onload="this.media='all'">
+    <!-- Polices locales -->
+    <link rel="stylesheet" href="./css/fonts.css" />
 
-    <!-- fallback -->
-    <noscript>
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="./css/index.css">
-    </noscript>
-
+    <!-- CSS global + page -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/index.css" />
 </head>
 
 <body>
 
-    <!-- HERO -->
-    <section id="hero">
+    <!-- ============================================================
+       HEADER / NAV
+  ============================================================ -->
+    <header id="header">
+        <div class="header-inner">
+
+            <!-- Logo : remplace par ton fichier image quand il est prêt -->
+            <a href="index.html" class="logo" aria-label="Voltaire Électricité – Accueil">
+                <span class="logo-mark">V</span>
+            </a>
+
+            <nav class="nav-main" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html" class="nav-cta">Demander un devis</a></li>
+                </ul>
+            </nav>
+
+            <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- ============================================================
+       HERO
+  ============================================================ -->
+    <section id="hero" aria-label="Introduction">
 
         <div class="hero-bg">
-            <img src="image/tableau-electricite.webp" alt="tableau electricite" id="hero-img" loading="eager"
-                fetchpriority="high" decoding="async" width="1920" height="1080" />
+            <!-- Remplace ce src par ton image hero (villa, installation électrique premium) -->
+            <img src="image/tableau-electricite.webp" alt="tableau electricite" id="hero-img" />
             <div class="hero-overlay"></div>
         </div>
 
         <div class="hero-content">
-            <p class="hero-eyebrow">Électricien certifié · Saint-Tropez</p>
-
-            <h1 class="hero-title">
+            <p class="hero-eyebrow" data-anim="fade-up">Électricien certifié · Saint-Tropez</p>
+            <h1 class="hero-title" data-anim="fade-up" data-delay="1">
                 L'excellence<br />au service<br /><em>de votre demeure</em>
             </h1>
-
-            <p class="hero-sub">
-                Installations électriques, domotique et dépannage pour villas,
+            <p class="hero-sub" data-anim="fade-up" data-delay="2">
+                Installations électriques, domotique et dépannage pour villas,<br />
                 propriétés de prestige et yachts dans le Golfe de Saint-Tropez.
             </p>
-
-            <div class="hero-actions">
-                <a href="contact.html" class="btn-primary">Demander un devis</a>
+            <div class="hero-actions" data-anim="fade-up" data-delay="3">
+                <a href="contact.html" class="btn-primary">Demander un devis gratuit</a>
                 <a href="realisations.html" class="btn-ghost">Voir nos réalisations</a>
             </div>
         </div>
 
+        <div class="hero-scroll" aria-hidden="true">
+            <span></span>
+            <p>Défiler</p>
+        </div>
+
     </section>
 
-    <!-- JS DEFER -->
-    <script src="./js/main.js" defer></script>
-    <script src="./js/index.js" defer></script>
+    <!-- ============================================================
+       BANDEAU CONFIANCE (CHIFFRES CLÉS)
+  ============================================================ -->
+    <section id="chiffres" aria-label="Chiffres clés">
+        <div class="container">
+            <ul class="chiffres-list">
+                <li data-anim="fade-up">
+                    <strong class="chiffre-nb" data-count="18">0</strong>
+                    <span class="chiffre-unit">ans</span>
+                    <p>d'expérience</p>
+                </li>
+                <li class="separator" aria-hidden="true"></li>
+                <li data-anim="fade-up" data-delay="1">
+                    <strong class="chiffre-nb" data-count="320">0</strong>
+                    <span class="chiffre-unit">+</span>
+                    <p>chantiers réalisés</p>
+                </li>
+                <li class="separator" aria-hidden="true"></li>
+                <li data-anim="fade-up" data-delay="2">
+                    <strong class="chiffre-nb" data-count="100">0</strong>
+                    <span class="chiffre-unit">%</span>
+                    <p>clients satisfaits</p>
+                </li>
+                <li class="separator" aria-hidden="true"></li>
+                <li data-anim="fade-up" data-delay="3">
+                    <strong class="chiffre-nb">24</strong>
+                    <span class="chiffre-unit">h</span>
+                    <p>dépannage d'urgence</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       APERÇU SERVICES
+  ============================================================ -->
+    <section id="services-preview" aria-labelledby="services-title">
+        <div class="container">
+
+            <div class="section-header" data-anim="fade-up">
+                <span class="section-label">Ce que nous faisons</span>
+                <h2 id="services-title">Un savoir-faire<br /><em>complet</em></h2>
+            </div>
+
+            <div class="services-grid">
+
+                <article class="service-card" data-anim="fade-up" data-delay="0">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 4L8 26h14l-2 18 18-24H26L24 4z" stroke="currentColor" stroke-width="2"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Installation électrique</h3>
+                    <p>Tableaux de distribution, câblages, prises et éclairage — réalisés dans les règles de l'art pour
+                        villas neuves ou en rénovation.</p>
+                    <a href="services.html#installation" class="card-link">En savoir plus →</a>
+                </article>
+
+                <article class="service-card" data-anim="fade-up" data-delay="1">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="14" width="32" height="22" rx="3" stroke="currentColor" stroke-width="2" />
+                            <path d="M16 14V10a8 8 0 0116 0v4" stroke="currentColor" stroke-width="2" />
+                            <circle cx="24" cy="25" r="4" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Domotique & sécurité</h3>
+                    <p>Pilotage intelligent de votre propriété : éclairage, volets, alarme, contrôle d'accès — à
+                        distance depuis votre smartphone.</p>
+                    <a href="services.html#domotique" class="card-link">En savoir plus →</a>
+                </article>
+
+                <article class="service-card" data-anim="fade-up" data-delay="2">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2" />
+                            <path d="M24 16v8l5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M12 8l3 3M36 8l-3 3" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Dépannage 24h/24</h3>
+                    <p>Panne électrique, disjoncteur, court-circuit — une intervention rapide, même en haute saison,
+                        pour ne jamais vous laisser dans le noir.</p>
+                    <a href="services.html#depannage" class="card-link">En savoir plus →</a>
+                </article>
+
+            </div>
+
+            <div class="services-more" data-anim="fade-up">
+                <a href="services.html" class="btn-outline">Voir tous nos services</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       ZONE D'INTERVENTION
+  ============================================================ -->
+    <section id="zone" aria-labelledby="zone-title">
+        <div class="zone-inner">
+
+            <div class="zone-visual" data-anim="fade-right">
+                <!-- Remplace par une photo de Saint-Tropez / du Golfe -->
+                <img src="image/saint-tropez-vue.webp" alt="Vue sur le Golfe de Saint-Tropez" loading="lazy" />
+                <div class="zone-badge">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                            stroke="currentColor" stroke-width="1.5" />
+                        <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                    Golfe de Saint-Tropez
+                </div>
+            </div>
+
+            <div class="zone-content" data-anim="fade-left">
+                <span class="section-label">Zone d'intervention</span>
+                <h2 id="zone-title">Présents dans<br />tout le <em>Golfe</em></h2>
+                <p>Basés à Saint-Tropez, nous intervenons dans un rayon de 30 km pour tous vos besoins électriques — des
+                    chantiers neufs aux urgences.</p>
+                <ul class="zone-list">
+                    <li>Saint-Tropez</li>
+                    <li>Ramatuelle</li>
+                    <li>Gassin</li>
+                    <li>Grimaud</li>
+                    <li>Sainte-Maxime</li>
+                    <li>Cogolin</li>
+                    <li>La Croix-Valmer</li>
+                    <li>Le Lavandou</li>
+                </ul>
+                <a href="contact.html" class="btn-primary">Vérifier ma commune</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       RÉALISATION MISE EN AVANT
+  ============================================================ -->
+    <section id="realisation-featured" aria-labelledby="real-title">
+        <div class="container">
+
+            <div class="section-header" data-anim="fade-up">
+                <span class="section-label">Réalisation récente</span>
+                <h2 id="real-title">Villa des <em>Parcs de Ramatuelle</em></h2>
+            </div>
+
+            <div class="real-showcase" data-anim="fade-up" data-delay="1">
+                <div class="real-images">
+                    <!-- Remplace par tes vraies photos de chantier -->
+                    <img src="image/tableau-electrique-villa.webp" alt="Tableau électrique villa de luxe"
+                        class="real-img-main" loading="lazy" />
+                    <img src="image/cablage-piscine.webp" alt="Câblage encastré piscine" class="real-img-s1"
+                        loading="lazy" />
+                    <img src="image/installation-luminaires.webp" alt="Éclairage extérieur architectural"
+                        class="real-img-s2" loading="lazy" />
+                </div>
+                <div class="real-info">
+                    <dl>
+                        <div>
+                            <dt>Type</dt>
+                            <dd>Villa neuve 450 m²</dd>
+                        </div>
+                        <div>
+                            <dt>Prestations</dt>
+                            <dd>Installation complète, domotique KNX, éclairage paysager</dd>
+                        </div>
+                        <div>
+                            <dt>Durée</dt>
+                            <dd>6 semaines</dd>
+                        </div>
+                        <div>
+                            <dt>Lieu</dt>
+                            <dd>Ramatuelle, Var</dd>
+                        </div>
+                    </dl>
+                    <a href="realisations.html" class="btn-outline">Voir toutes les réalisations</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       BANDE CTA
+  ============================================================ -->
+    <section id="cta-band" aria-label="Appel à l'action">
+        <div class="cta-band-inner">
+            <div class="cta-band-content" data-anim="fade-up">
+                <h2>Un projet ? Une urgence ?<br /><em>Parlons-en.</em></h2>
+                <p>Devis gratuit sous 24h. Intervention rapide sur l'ensemble du Golfe de Saint-Tropez.</p>
+            </div>
+            <div class="cta-band-actions" data-anim="fade-up" data-delay="1">
+                <a href="contact.html" class="btn-primary">Demander un devis</a>
+                <a href="tel:+33600000000" class="btn-ghost">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path
+                            d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"
+                            stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                    06 00 00 00 00
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+    <footer id="footer">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo" aria-label="Voltaire Électricité">
+                    <span class="logo-mark">V</span>
+                    <span class="logo-text">Voltaire <em>Électricité</em></span>
+                </a>
+                <p>Électricien certifié RGE<br />Saint-Tropez & Golfe de Saint-Tropez</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Navigation secondaire">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <address>
+                    <p>12 Rue des Potiers<br />83990 Saint-Tropez</p>
+                    <p><a href="tel:+33600000000">06 00 00 00 00</a></p>
+                    <p><a href="mailto:contact@voltaire-electricite.fr">contact@voltaire-electricite.fr</a></p>
+                </address>
+            </div>
+
+            <div class="footer-certifs">
+                <h3>Certifications</h3>
+                <ul>
+                    <li>Qualif. Qualifelec</li>
+                    <li>Certifié RGE</li>
+                    <li>Habilitation BR / BC</li>
+                    <li>Assurance décennale</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Voltaire Électricité — Tous droits réservés</p>
+            <p><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Politique
+                    de confidentialité</a></p>
+        </div>
+    </footer>
+
+    <!-- JS global + page -->
+    <script src="./js/main.js"></script>
+    <script src="./js/index.js"></script>
 
 </body>
 
