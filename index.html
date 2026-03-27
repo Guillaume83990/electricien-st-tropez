@@ -7,10 +7,16 @@
     <meta name="description"
         content="Électricien expert à Saint-Tropez et dans le Golfe. Installations, dépannages et rénovations électriques haut de gamme pour villas et propriétés de prestige." />
     <title>Voltaire Électricité — Électricien Saint-Tropez</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+
+    <!-- ✅ PRELOAD polices critiques — réduit le délai LCP de ~360 ms -->
+    <link rel="preload" href="./fonts/CormorantGaramond-VariableFont_wght.ttf" as="font" type="font/truetype"
+        crossorigin />
+    <link rel="preload" href="./fonts/DMSans-VariableFont_opsz,wght.ttf" as="font" type="font/truetype" crossorigin />
 
     <!-- Polices locales -->
     <link rel="stylesheet" href="./css/fonts.css" />
@@ -28,7 +34,6 @@
     <header id="header">
         <div class="header-inner">
 
-            <!-- Logo : remplace par ton fichier image quand il est prêt -->
             <a href="index.html" class="logo" aria-label="Voltaire Électricité – Accueil">
                 <span class="logo-mark">V</span>
             </a>
@@ -56,8 +61,10 @@
     <section id="hero" aria-label="Introduction">
 
         <div class="hero-bg">
-            <!-- Remplace ce src par ton image hero (villa, installation électrique premium) -->
-            <img src="image/tableau-electricite.webp" alt="tableau electricite" id="hero-img" />
+            <!-- ✅ fetchpriority="high" — indique au navigateur de charger cette image en priorité -->
+            <!-- ✅ width/height — réserve l'espace et évite le CLS -->
+            <img src="image/tableau-electricite.webp" alt="tableau electricite" id="hero-img" fetchpriority="high"
+                width="1920" height="1080" />
             <div class="hero-overlay"></div>
         </div>
 
@@ -187,8 +194,9 @@
         <div class="zone-inner">
 
             <div class="zone-visual" data-anim="fade-right">
-                <!-- Remplace par une photo de Saint-Tropez / du Golfe -->
-                <img src="image/saint-tropez-vue.webp" alt="Vue sur le Golfe de Saint-Tropez" loading="lazy" />
+                <!-- ✅ width/height ajoutés — évite le CLS au chargement lazy -->
+                <img src="image/saint-tropez-vue.webp" alt="Vue sur le Golfe de Saint-Tropez" loading="lazy"
+                    width="1026" height="797" />
                 <div class="zone-badge">
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
@@ -233,13 +241,12 @@
 
             <div class="real-showcase" data-anim="fade-up" data-delay="1">
                 <div class="real-images">
-                    <!-- Remplace par tes vraies photos de chantier -->
                     <img src="image/tableau-electrique-villa.webp" alt="Tableau électrique villa de luxe"
-                        class="real-img-main" loading="lazy" />
+                        class="real-img-main" loading="lazy" width="800" height="480" />
                     <img src="image/cablage-piscine.webp" alt="Câblage encastré piscine" class="real-img-s1"
-                        loading="lazy" />
+                        loading="lazy" width="400" height="232" />
                     <img src="image/installation-luminaires.webp" alt="Éclairage extérieur architectural"
-                        class="real-img-s2" loading="lazy" />
+                        class="real-img-s2" loading="lazy" width="400" height="232" />
                 </div>
                 <div class="real-info">
                     <dl>
