@@ -1,52 +1,45 @@
 /* ============================================================
-   POLICES LOCALES — Variable Fonts
+   POLICES LOCALES — Variable Fonts (Optimisées WOFF2)
    
-   Fichiers à placer dans /fonts/ :
-   
-   Cormorant Garamond (Google Fonts → "Download all") :
-     - CormorantGaramond-VariableFont_wght.ttf
-     - CormorantGaramond-Italic-VariableFont_wght.ttf
-   
-   DM Sans (Google Fonts → "Download all") :
-     - DMSans-VariableFont_opsz,wght.ttf
-     - DMSans-Italic-VariableFont_opsz,wght.ttf
-   
-   Les variable fonts remplacent tous les fichiers séparés
-   par graisse — 1 seul fichier couvre light, regular,
-   semibold, bold, etc.
+   Les formats WOFF2 divisent le poids par 4 par rapport au TTF,
+   ce qui est crucial pour ton score de performance Lighthouse.
 ============================================================ */
 
-/* --- Cormorant Garamond — Normal --------------------------- */
+/* --- Cormorant Garamond — Normal --- */
 @font-face {
     font-family: 'Cormorant Garamond';
-    src: url('../fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype');
+    src: url('../fonts/CormorantGaramond-VariableFont_wght.woff2') format('woff2-variations'),
+        url('../fonts/CormorantGaramond-VariableFont_wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
-/* --- Cormorant Garamond — Italic --------------------------- */
+/* --- Cormorant Garamond — Italic --- */
 @font-face {
     font-family: 'Cormorant Garamond';
-    src: url('../fonts/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+    src: url('../fonts/CormorantGaramond-Italic-VariableFont_wght.woff2') format('woff2-variations'),
+        url('../fonts/CormorantGaramond-Italic-VariableFont_wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;
 }
 
-/* --- DM Sans — Normal -------------------------------------- */
+/* --- DM Sans — Normal --- */
 @font-face {
     font-family: 'DM Sans';
-    src: url('../fonts/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+    src: url('../fonts/DMSans-VariableFont_opsz,wght.woff2') format('woff2-variations'),
+        url('../fonts/DMSans-VariableFont_opsz,wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
-/* --- DM Sans — Italic -------------------------------------- */
+/* --- DM Sans — Italic --- */
 @font-face {
     font-family: 'DM Sans';
-    src: url('../fonts/DMSans-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    src: url('../fonts/DMSans-Italic-VariableFont_opsz,wght.woff2') format('woff2-variations'),
+        url('../fonts/DMSans-Italic-VariableFont_opsz,wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;
