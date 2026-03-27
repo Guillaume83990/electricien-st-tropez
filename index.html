@@ -5,19 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Électricien expert à Saint-Tropez et dans le Golfe. Installations, dépannages et rénovations électriques haut de gamme pour villas et propriétés de prestige." />
+        content="Électricien expert à Saint-Tropez et dans le Golfe. Installations, dépannages et rénovations électriques haut de gamme." />
     <title>Voltaire Électricité — Électricien Saint-Tropez</title>
-    <!-- Favicon -->
+
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
 
-    <!-- Polices locales -->
-    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="preload" as="image" href="image/tableau-electricite.webp" fetchpriority="high" />
 
-    <!-- CSS global + page -->
+    <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/index.css" />
+
+    <script src="./js/main.js" defer></script>
+    <script src="./js/index.js" defer></script>
 </head>
 
 <body>
@@ -56,8 +58,8 @@
     <section id="hero" aria-label="Introduction">
 
         <div class="hero-bg">
-            <!-- Remplace ce src par ton image hero (villa, installation électrique premium) -->
-            <img src="image/tableau-electricite.webp" alt="tableau electricite" id="hero-img" />
+            <img src="image/tableau-electricite.webp" alt="Tableau électrique de villa de luxe à Saint-Tropez"
+                id="hero-img" fetchpriority="high" loading="eager" width="1920" height="1080" />
             <div class="hero-overlay"></div>
         </div>
 
@@ -342,10 +344,6 @@
                     de confidentialité</a></p>
         </div>
     </footer>
-
-    <!-- JS global + page -->
-    <script src="./js/main.js"></script>
-    <script src="./js/index.js"></script>
 
 </body>
 
