@@ -45,7 +45,7 @@
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 0 clamp(20px, 5vw, 80px);
+    padding: 0 var(--pad-x);
     padding-top: 80px;
     max-width: 900px;
 }
@@ -60,10 +60,12 @@
     animation: fade-in-up 0.9s var(--ease) both;
 }
 
+/* Plancher abaissé + formule fluide pour éviter tout débordement
+   ou retour à la ligne parasite sur les écrans 320-360px */
 .hero-title {
-    font-size: clamp(3.4rem, 7vw, 7.5rem);
+    font-size: clamp(2.2rem, 5vw + 1rem, 7.5rem);
     font-weight: 300;
-    line-height: 1.0;
+    line-height: 1.05;
     letter-spacing: -0.01em;
     color: var(--ivoire);
     margin-bottom: 32px;
@@ -104,7 +106,6 @@
     }
 }
 
-/* Indicateur scroll */
 .hero-scroll {
     position: absolute;
     bottom: 36px;
@@ -280,6 +281,9 @@
 }
 
 .card-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.1em;
@@ -394,7 +398,9 @@
     font-size: 0.7rem;
 }
 
-/* --- RÉALISATION MISE EN AVANT ------------------------------- */
+/* --- RÉALISATION MISE EN AVANT -------------------------------
+   Passage à aspect-ratio : plus besoin de hauteurs figées par
+   breakpoint, le ratio reste net à toutes les largeurs. */
 #realisation-featured {
     padding: var(--section-pad) 0;
     background: var(--noir);
@@ -418,14 +424,14 @@
     grid-column: 1;
     grid-row: 1 / 3;
     width: 100%;
-    height: 480px;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
 }
 
 .real-img-s1,
 .real-img-s2 {
     width: 100%;
-    height: 232px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
 }
 
@@ -463,9 +469,6 @@
     line-height: 1.5;
 }
 
-/* --- CTA BAND ------------------------------------------------ */
-/* cta-band déplacé dans style.css (global) */
-
 /* --- Responsive ---------------------------------------------- */
 @media (max-width: 1024px) {
     .services-grid {
@@ -484,12 +487,7 @@
     .real-img-main {
         grid-column: 1 / 3;
         grid-row: 1;
-        height: 320px;
-    }
-
-    .real-img-s1,
-    .real-img-s2 {
-        height: 180px;
+        aspect-ratio: 16 / 9;
     }
 }
 
@@ -500,30 +498,34 @@
 
     .zone-inner {
         grid-template-columns: 1fr;
+        min-height: unset;
     }
 
     .zone-visual {
-        height: 320px;
+        aspect-ratio: 4 / 3;
     }
 
     .chiffres-list .separator {
         display: none;
     }
 
-    .cta-band-inner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .cta-band-content p {
-        max-width: 100%;
-    }
-
-    .cta-band-actions {
-        justify-content: center;
-    }
-
     .hero-sub br {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .real-images {
+        grid-template-columns: 1fr;
+    }
+
+    .real-img-main {
+        grid-column: 1;
+        aspect-ratio: 16 / 10;
+    }
+
+    .real-img-s1,
+    .real-img-s2 {
+        aspect-ratio: 16 / 9;
     }
 }

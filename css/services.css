@@ -16,7 +16,7 @@
     min-height: 70vh;
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding-inline: clamp(20px, 5vw, 60px);
+    padding-inline: var(--pad-x);
     gap: clamp(40px, 6vw, 80px);
     align-items: center;
 }
@@ -97,9 +97,23 @@
     gap: 0;
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding-inline: clamp(20px, 5vw, 60px);
+    padding-inline: var(--pad-x);
     overflow-x: auto;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    /* Fondu aux bords : signale visuellement que la barre se scrolle
+       horizontalement, au lieu de laisser le dernier onglet tranché
+       net au bord de l'écran (perçu comme un bug de mise en page) */
+    mask-image: linear-gradient(to right,
+            transparent 0,
+            black var(--pad-x),
+            black calc(100% - var(--pad-x)),
+            transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0,
+            black var(--pad-x),
+            black calc(100% - var(--pad-x)),
+            transparent 100%);
 }
 
 .services-nav-inner::-webkit-scrollbar {
@@ -109,6 +123,9 @@
 .snav-link {
     flex-shrink: 0;
     padding: 18px 28px;
+    min-height: var(--touch-target);
+    display: inline-flex;
+    align-items: center;
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.16em;
@@ -131,6 +148,10 @@
     padding: var(--section-pad) 0;
     background: var(--noir);
     overflow: hidden;
+    /* Compense le header fixed (~80px) + la nav d'ancres sticky (~56px)
+       pour qu'un clic sur #installation, #domotique... n'atterrisse pas
+       sous les éléments sticky */
+    scroll-margin-top: 130px;
 }
 
 .service-section--alt {
@@ -143,7 +164,7 @@
     min-height: 560px;
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding-inline: clamp(20px, 5vw, 60px);
+    padding-inline: var(--pad-x);
     gap: clamp(40px, 7vw, 100px);
     align-items: center;
 }
@@ -389,6 +410,7 @@
 
     .snav-link {
         padding: 16px 16px;
+        min-height: var(--touch-target);
         font-size: 0.68rem;
     }
 }

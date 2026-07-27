@@ -15,19 +15,17 @@
     onScroll(); // état initial
 })();
 
-/* --- Burger menu (mobile) ------------------------------------ */
+/* --- Burger menu (mobile) — panneau fixed indépendant du header,
+   verrouillage du scroll de fond façon iOS ------------------- */
 (function () {
     const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-main');
-    if (!burger || !nav) return;
+    const header = document.getElementById('header');
+    const mobileNav = document.getElementById('mobileNav');
+    if (!burger || !mobileNav || !header) return;
 
-    burger.addEventListener('click', function () {
-        const open = nav.classList.toggle('open');
-        burger.classList.toggle('open', open);
-        burger.setAttribute('aria-expanded', open);
-        document.body.style.overflow = open ? 'hidden' : '';
+    let savedScrollY = 0;
 
-        // Animation burger → croix
+    function setBurgerVisual(open) {
         const spans = burger.querySelectorAll('span');
         if (open) {
             spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
@@ -38,20 +36,43 @@
             spans[1].style.opacity = '';
             spans[2].style.transform = '';
         }
+    }
+
+    function openMenu() {
+        savedScrollY = window.scrollY;
+        mobileNav.classList.add('open');
+        burger.classList.add('open');
+        header.classList.add('menu-open');
+        burger.setAttribute('aria-expanded', 'true');
+
+        // Verrouille le scroll de fond (évite le "bleed" derrière le panneau sur iOS)
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + savedScrollY + 'px';
+        document.body.style.width = '100%';
+
+        setBurgerVisual(true);
+    }
+
+    function closeMenu() {
+        mobileNav.classList.remove('open');
+        burger.classList.remove('open');
+        header.classList.remove('menu-open');
+        burger.setAttribute('aria-expanded', 'false');
+
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, savedScrollY);
+
+        setBurgerVisual(false);
+    }
+
+    burger.addEventListener('click', function () {
+        mobileNav.classList.contains('open') ? closeMenu() : openMenu();
     });
 
-    // Fermer le menu si on clique sur un lien
-    nav.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            nav.classList.remove('open');
-            burger.classList.remove('open');
-            document.body.style.overflow = '';
-            burger.setAttribute('aria-expanded', false);
-            burger.querySelectorAll('span').forEach(function (s) {
-                s.style.transform = '';
-                s.style.opacity = '';
-            });
-        });
+    mobileNav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
     });
 })();
 
@@ -136,8 +157,6 @@
             const { band, d, colIndex } = reel;
             const delay = colIndex * 80; // décalage entre chaque digit
 
-            // Position finale : translateY de -(d * 1em) pour afficher le bon digit
-            // On utilise une transition CSS injectée inline
             setTimeout(function () {
                 band.style.transition = 'transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1)';
                 band.style.transform = 'translateY(-' + (d * 1) + 'em)';
@@ -150,7 +169,6 @@
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     const reels = buildSlot(entry.target);
-                    // Léger délai pour laisser le DOM se peindre
                     requestAnimationFrame(function () {
                         requestAnimationFrame(function () {
                             animateSlot(reels, reels.length);

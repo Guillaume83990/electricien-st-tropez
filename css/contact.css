@@ -20,9 +20,14 @@
     pointer-events: none;
 }
 
+/* Manquait entièrement : sans ça le H1 et le paragraphe touchaient
+   les bords de l'écran sur mobile, sans aucune marge */
 .contact-hero-inner {
     position: relative;
     z-index: 1;
+    width: min(100%, var(--container));
+    margin-inline: auto;
+    padding-inline: var(--pad-x);
 }
 
 .contact-hero-inner .section-label {
@@ -54,7 +59,7 @@
     gap: clamp(40px, 6vw, 80px);
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding-inline: clamp(20px, 5vw, 60px);
+    padding-inline: var(--pad-x);
     align-items: start;
 }
 
@@ -122,6 +127,7 @@
     transition: border-color var(--dur) var(--ease);
     appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .form-group input::placeholder,
@@ -175,10 +181,14 @@
     gap: 10px;
 }
 
+/* Zone tactile confortable : la ligne case + texte est la vraie
+   surface cliquable, elle avait ~23px de haut (< 44px recommandé) */
 .checkbox-label {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 6px 0;
+    min-height: var(--touch-target);
     cursor: pointer;
     font-size: 0.88rem;
     color: var(--ivoire-2);
@@ -195,6 +205,7 @@
 .checkbox-label input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
     width: 18px;
     height: 18px;
     min-width: 18px;
@@ -226,6 +237,8 @@
 /* RGPD */
 .form-rgpd .checkbox-label {
     align-items: flex-start;
+    min-height: 0;
+    padding: 4px 0;
     font-size: 0.8rem;
     line-height: 1.5;
 }
@@ -251,6 +264,10 @@
     margin-top: 8px;
     position: relative;
     overflow: hidden;
+    /* Sécurité : le white-space:nowrap global suffit en temps normal
+       ici (bouton pleine largeur), mais on désactive quand même par
+       cohérence avec le fix appliqué au CTA de la modal réalisations */
+    white-space: normal;
 }
 
 .btn-loader {

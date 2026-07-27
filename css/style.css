@@ -25,6 +25,10 @@
     --section-pad: clamp(80px, 10vw, 140px);
     --container: 1240px;
     --gap: clamp(24px, 3vw, 48px);
+    --pad-x: clamp(20px, 5vw, 60px);
+
+    /* Ergonomie tactile */
+    --touch-target: 44px;
 
     /* Transitions */
     --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -38,12 +42,22 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
+/* overflow-x:hidden vit ICI, sur <html> — jamais sur un wrapper <div>
+   nested (comme .page-wrapper l'était avant) : un wrapper avec
+   overflow-x non-visible force overflow-y à "auto" (règle CSS), ce
+   qui en fait un conteneur de scroll fantôme séparé de la page,
+   et casse le scroll natif vers les ancres (#installation, etc.)
+   ainsi que position:sticky des descendants. Sur <html>, qui EST
+   déjà la racine du scroll, ce problème n'existe pas. */
 html {
     scroll-behavior: smooth;
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -52,7 +66,13 @@ body {
     font-family: var(--font-sans);
     font-weight: 400;
     line-height: 1.65;
-    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.page-wrapper {
+    width: 100%;
+    /* plus d'overflow-x ici, volontairement */
 }
 
 img {
@@ -61,9 +81,11 @@ img {
     height: auto;
 }
 
-a {
+a,
+button {
     color: inherit;
     text-decoration: none;
+    touch-action: manipulation;
 }
 
 ul,
@@ -79,7 +101,7 @@ address {
 .container {
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding-inline: clamp(20px, 5vw, 60px);
+    padding-inline: var(--pad-x);
 }
 
 /* --- Titres -------------------------------------------------- */
@@ -94,15 +116,15 @@ h4 {
 }
 
 h1 {
-    font-size: clamp(3rem, 6vw, 6rem);
+    font-size: clamp(2.4rem, 4vw + 1.2rem, 6rem);
 }
 
 h2 {
-    font-size: clamp(2.2rem, 4vw, 4rem);
+    font-size: clamp(1.9rem, 3vw + 1rem, 4rem);
 }
 
 h3 {
-    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    font-size: clamp(1.25rem, 1.5vw + 1rem, 1.8rem);
 }
 
 em {
@@ -132,7 +154,9 @@ em {
 .btn-outline {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    min-height: var(--touch-target);
     padding: 14px 32px;
     font-family: var(--font-sans);
     font-size: 0.82rem;
@@ -212,7 +236,7 @@ em {
     justify-content: space-between;
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding: 22px clamp(20px, 5vw, 60px);
+    padding: 22px var(--pad-x);
     gap: 24px;
 }
 
@@ -235,7 +259,7 @@ em {
     font-weight: 300;
     color: var(--or);
     letter-spacing: 0;
-    /* Remplace par ton <img src="./images/logo.svg"> quand prêt */
+    transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 
 .logo-text {
@@ -244,14 +268,16 @@ em {
     font-weight: 300;
     letter-spacing: 0.05em;
     color: var(--ivoire);
+    transition: color var(--dur) var(--ease);
 }
 
 .logo-text em {
     color: var(--or);
     font-style: italic;
+    transition: color var(--dur) var(--ease);
 }
 
-/* Navigation */
+/* Navigation desktop */
 .nav-main ul {
     display: flex;
     align-items: center;
@@ -259,6 +285,8 @@ em {
 }
 
 .nav-main a {
+    display: inline-flex;
+    align-items: center;
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.14em;
@@ -291,6 +319,7 @@ em {
 
 .nav-main .nav-cta {
     padding: 9px 22px;
+    min-height: var(--touch-target);
     border: 1px solid var(--or);
     color: var(--or);
     letter-spacing: 0.12em;
@@ -311,13 +340,16 @@ em {
 .burger {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: var(--touch-target);
+    height: var(--touch-target);
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 0;
     z-index: 101;
-    /* au-dessus du menu ouvert */
     position: relative;
 }
 
@@ -331,9 +363,30 @@ em {
         background 0.25s;
 }
 
-/* Spans noirs quand le menu fond clair est ouvert */
 .burger.open span {
     background: var(--noir);
+}
+
+#header.menu-open {
+    background: var(--ivoire);
+    box-shadow: none;
+}
+
+#header.menu-open .logo-mark {
+    color: var(--noir);
+    border-color: var(--noir);
+}
+
+#header.menu-open .logo-text {
+    color: var(--noir);
+}
+
+#header.menu-open .logo-text em {
+    color: var(--or-sombre);
+}
+
+.mobile-nav {
+    display: none;
 }
 
 /* --- Footer -------------------------------------------------- */
@@ -348,7 +401,7 @@ em {
     gap: var(--gap);
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
+    padding: clamp(60px, 8vw, 100px) var(--pad-x);
 }
 
 .footer-brand .logo {
@@ -378,6 +431,8 @@ em {
 }
 
 .footer-nav a {
+    display: inline-block;
+    padding: 4px 0;
     font-size: 0.88rem;
     color: var(--ivoire-2);
     transition: color 0.25s;
@@ -394,6 +449,8 @@ em {
 }
 
 .footer-contact a {
+    display: inline-block;
+    padding: 2px 0;
     transition: color 0.25s;
 }
 
@@ -420,13 +477,15 @@ em {
     gap: 12px;
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding: 24px clamp(20px, 5vw, 60px);
+    padding: 24px var(--pad-x);
     border-top: 1px solid var(--gris);
     font-size: 0.75rem;
     color: var(--gris-clair);
 }
 
 .footer-bottom a {
+    display: inline-block;
+    padding: 4px 0;
     transition: color 0.25s;
 }
 
@@ -487,7 +546,7 @@ em {
 .cta-band-inner {
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding-inline: clamp(20px, 5vw, 60px);
+    padding-inline: var(--pad-x);
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -495,7 +554,7 @@ em {
 }
 
 .cta-band-content h2 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(1.7rem, 5vw + 0.6rem, 3.5rem);
     line-height: 1.1;
     margin-bottom: 16px;
 }
@@ -536,7 +595,7 @@ em {
         display: flex;
     }
 
-    .nav-main.open {
+    .mobile-nav.open {
         display: flex;
         flex-direction: column;
         position: fixed;
@@ -547,50 +606,49 @@ em {
         overflow-y: auto;
     }
 
-    .nav-main.open ul {
+    .mobile-nav ul {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
         width: 100%;
     }
 
-    .nav-main.open ul li {
+    .mobile-nav ul li {
         width: 100%;
         border-bottom: 1px solid rgba(10, 10, 10, 0.1);
     }
 
-    .nav-main.open a {
+    .mobile-nav a {
         display: block;
+        width: 100%;
+        min-height: var(--touch-target);
         font-size: 1.1rem;
         font-weight: 500;
         letter-spacing: 0.12em;
+        text-transform: uppercase;
         color: var(--noir) !important;
         padding: 20px 0;
     }
 
-    .nav-main.open a::after {
-        display: none;
-    }
-
-    .nav-main.open a:hover {
+    .mobile-nav a:hover {
         color: var(--or-sombre) !important;
     }
 
-    .nav-main.open .nav-cta {
+    .mobile-nav .nav-cta {
         margin-top: 32px;
-        display: inline-block;
+        display: inline-flex;
         width: auto;
         border: 1px solid var(--noir);
         color: var(--noir) !important;
         padding: 14px 28px;
     }
 
-    .nav-main.open .nav-cta:hover {
+    .mobile-nav .nav-cta:hover {
         background: var(--noir);
         color: var(--ivoire) !important;
     }
 
-    /* CTA band responsive */
     .cta-band-inner {
         grid-template-columns: 1fr;
         text-align: center;
@@ -613,5 +671,18 @@ em {
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .btn-primary,
+    .btn-ghost,
+    .btn-outline {
+        width: 100%;
+    }
+
+    .hero-actions {
+        width: 100%;
     }
 }

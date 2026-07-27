@@ -170,11 +170,11 @@
     text-align: right;
 }
 
-/* Point sur la ligne */
+/* Point sur la ligne — calculé pour padding-left:60px (desktop) ;
+   voir override dans le media query pour le padding-left:40px mobile */
 .tl-dot {
     position: absolute;
     left: -47px;
-    /* aligné sur la ligne ::before */
     top: 6px;
     width: 10px;
     height: 10px;
@@ -291,7 +291,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: min(100%, calc(var(--container) / 2 + clamp(20px, 5vw, 60px)));
+    width: min(100%, calc(var(--container) / 2 + var(--pad-x)));
     margin-left: auto;
 }
 
@@ -425,6 +425,12 @@
 
     .timeline {
         padding-left: 40px;
+    }
+
+    /* Recalculé pour padding-left:40px (au lieu de 60px en desktop) —
+       sans ça le point se détache de la ligne verticale */
+    .tl-dot {
+        left: -27px;
     }
 }
 

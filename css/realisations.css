@@ -13,7 +13,7 @@
 .real-hero-inner {
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding-inline: clamp(20px, 5vw, 60px);
+    padding-inline: var(--pad-x);
     padding-bottom: clamp(48px, 7vw, 80px);
     text-align: center;
 }
@@ -88,7 +88,7 @@
     gap: 0;
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding-inline: clamp(20px, 5vw, 60px);
+    padding-inline: var(--pad-x);
     overflow-x: auto;
     scrollbar-width: none;
 }
@@ -100,6 +100,7 @@
 .filtre-btn {
     flex-shrink: 0;
     padding: 18px 28px;
+    min-height: var(--touch-target);
     font-family: var(--font-sans);
     font-size: 0.72rem;
     font-weight: 500;
@@ -134,7 +135,7 @@
     gap: 8px;
     width: min(100%, var(--container));
     margin-inline: auto;
-    padding-inline: clamp(20px, 5vw, 60px);
+    padding-inline: var(--pad-x);
 }
 
 /* Carte standard */
@@ -170,7 +171,7 @@
     filter: brightness(0.55);
 }
 
-/* Overlay texte (apparaît au hover) */
+/* Overlay texte (apparaît au hover sur desktop) */
 .projet-overlay {
     position: absolute;
     inset: 0;
@@ -257,8 +258,8 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 44px;
-    height: 44px;
+    width: var(--touch-target);
+    height: var(--touch-target);
     border: 1px solid rgba(201, 169, 110, 0.5);
     background: rgba(10, 10, 10, 0.6);
     backdrop-filter: blur(6px);
@@ -293,6 +294,32 @@
     display: none;
 }
 
+/* Sur les appareils sans hover (tactile), l'overlay et le bouton
+   "ouvrir" doivent être visibles en permanence — sinon rien
+   n'indique que la carte est cliquable. */
+@media (hover: none) {
+    .projet-overlay {
+        opacity: 1;
+        background: linear-gradient(to top,
+                rgba(10, 10, 10, 0.85) 0%,
+                rgba(10, 10, 10, 0.25) 55%,
+                transparent 100%);
+    }
+
+    .projet-overlay-inner {
+        transform: none;
+    }
+
+    .projet-open {
+        opacity: 1;
+        transform: none;
+    }
+
+    .projet-img-wrap img {
+        filter: brightness(0.7);
+    }
+}
+
 /* --- MODAL -------------------------------------------------- */
 #modal {
     position: fixed;
@@ -324,6 +351,8 @@
     width: min(100%, 1060px);
     max-height: 90vh;
     overflow-y: auto;
+    overflow-x: hidden;
+    /* garde-fou : jamais de scroll horizontal dans la modal */
     scrollbar-width: thin;
     scrollbar-color: var(--gris) transparent;
     animation: modal-in 0.4s var(--ease) both;
@@ -343,11 +372,11 @@
 
 .modal-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 16px;
+    right: 16px;
     z-index: 10;
-    width: 40px;
-    height: 40px;
+    width: var(--touch-target);
+    height: var(--touch-target);
     border: 1px solid var(--gris);
     background: var(--noir-2);
     display: grid;
@@ -367,9 +396,12 @@
     color: var(--or);
 }
 
+/* minmax(0, ...) au lieu de 1fr/3fr/2fr seuls : empêche les colonnes
+   de s'élargir au-delà du viewport à cause d'un contenu non-wrappable
+   (bouton, texte long) — c'est la cause du texte coupé sur mobile. */
 .modal-body {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
 }
 
 /* Galerie photos */
@@ -378,6 +410,7 @@
     flex-direction: column;
     gap: 6px;
     padding: 6px 6px 6px 6px;
+    min-width: 0;
 }
 
 .modal-img-main {
@@ -416,6 +449,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 0;
+    min-width: 0;
 }
 
 .modal-cats {
@@ -446,13 +480,16 @@
     border-top: 1px solid var(--gris);
 }
 
+/* flex-wrap + min-width:0 sur dd : la valeur peut désormais wrapper
+   ou passer à la ligne au lieu de pousser le panneau hors écran */
 .modal-meta>div {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: wrap;
     padding: 12px 0;
     border-bottom: 1px solid var(--gris);
-    gap: 16px;
+    gap: 4px 16px;
 }
 
 .modal-meta dt {
@@ -461,13 +498,25 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--or);
-    flex-shrink: 0;
+    flex: 0 0 auto;
 }
 
 .modal-meta dd {
     font-size: 0.85rem;
     color: var(--ivoire-2);
     text-align: right;
+    flex: 1 1 auto;
+    min-width: 0;
+    word-break: break-word;
+}
+
+/* Le CTA de la modal a un texte long ("Projet similaire ? Contactez-nous") :
+   on désactive le white-space:nowrap global (prévu pour les boutons
+   courts du header/hero) et on le passe en pleine largeur, centré. */
+.modal-info .btn-primary {
+    white-space: normal;
+    width: 100%;
+    text-align: center;
 }
 
 /* --- Responsive -------------------------------------------- */
@@ -493,7 +542,7 @@
     }
 
     .modal-body {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .modal-img-main {
